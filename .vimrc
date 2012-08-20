@@ -52,6 +52,9 @@ set statusline=%<%f\ %m%r%y%=LINE:%l/%L\ (%p%%)\ \ COL:%c%V\ \ F:%{foldlevel('.'
 
 let python_highlight_all = 1
 
+"Включаем 256 цветов в терминале, мы ведь работаем из иксов?
+"Нужно во многих терминалах, например в gnome-terminal
+set t_Co=256
 
 "Колоночка, чтобы показывать плюсики для скрытия блоков кода:
 "set foldcolumn=1
