@@ -19,6 +19,9 @@ map <F7> <Esc> :set invnumber<CR>
 nmap <F11> :NERDTreeToggle<CR>
 imap <F11> <ESC>:NERDTreeToggle<CR>
 
+nmap J <C-f>
+nmap K <C-b>
+
 "noremap <silent> <F11> :cal VimCommanderToggle()<CR>
 
 colorscheme delek
