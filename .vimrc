@@ -16,16 +16,10 @@ map <F6> :tabnext <CR>
 imap <F7> <Esc> :set invnumber<CR>i
 map <F7> <Esc> :set invnumber<CR>
 
-noremap <silent> <F11> :cal VimCommanderToggle()<CR>
+nmap <F11> :NERDTreeToggle<CR>
+imap <F11> <ESC>:NERDTreeToggle<CR>
 
-set wildmenu
-set wcm=<Tab>
-menu MainMenu.mc           :!mc<CR>
-menu MainMenu.ERP_restart  :!sudo /etc/init.d/openerp-server restart<CR>
-menu MainMenu.quit         :quit<CR>
-menu MainMenu.quit!        :quit!<CR>
-menu MainMenu.save         :exit<CR>
-map <F10> :emenu MainMenu.<Tab>
+"noremap <silent> <F11> :cal VimCommanderToggle()<CR>
 
 colorscheme delek
 
@@ -41,6 +35,13 @@ set backspace=indent,eol,start whichwrap+=<,>,[,]     "Удобное повед
 set laststatus=2    "Always how status line
 set nohlsearch        " highlight searches
 set statusline=%<%f\ %m%r%y%=LINE:%l/%L\ (%p%%)\ \ COL:%c%V\ \ F:%{foldlevel('.')}
+
+"Настройка omnicomletion для Python (а так же для js, html и css)
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
 
 "Highlight trailing whitespaces at the end of line
 "highlight ExtraWhitespace ctermbg=red guibg=red
