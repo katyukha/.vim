@@ -16,6 +16,9 @@ map <F6> :tabnext <CR>
 imap <F7> <Esc> :set invnumber<CR>i
 map <F7> <Esc> :set invnumber<CR>
 
+imap <F8> <Esc> :set invhlsearch<CR>i
+map <F8> <Esc> :set invhlsearch<CR>
+
 nmap <F11> :NERDTreeToggle<CR>
 imap <F11> <ESC>:NERDTreeToggle<CR>
 
@@ -58,7 +61,7 @@ let python_highlight_all = 1
 
 "Включаем 256 цветов в терминале, мы ведь работаем из иксов?
 "Нужно во многих терминалах, например в gnome-terminal
-set t_Co=256
+"set t_Co=256
 
 "Колоночка, чтобы показывать плюсики для скрытия блоков кода:
 "set foldcolumn=1
