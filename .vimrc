@@ -25,9 +25,17 @@ imap <F11> <ESC>:NERDTreeToggle<CR>
 nmap J <C-f>
 nmap K <C-b>
 
+
+nnoremap <silent> Q    :<C-U>bdelete<CR>
+"Git related keys
+nmap gs :Gstatus<CR>
+nmap gd :Gdiff<CR>
+nmap gc :Gcommit<CR>
 "noremap <silent> <F11> :cal VimCommanderToggle()<CR>
 
 colorscheme delek
+
+execute pathogen#infect()
 
 "Set only tabs and set tabwidth=4
 set expandtab
@@ -40,7 +48,7 @@ set mouse=a "Включить поддержку мыши
 set backspace=indent,eol,start whichwrap+=<,>,[,]     "Удобное поведение backspace
 set laststatus=2    "Always how status line
 set nohlsearch        " highlight searches
-set statusline=%<%f\ %m%r%y%=LINE:%l/%L\ (%p%%)\ \ COL:%c%V\ \ F:%{foldlevel('.')}
+set statusline=%<%f\ %m%r%y\ \|\ %{fugitive#statusline()}%=LINE:%l/%L\ (%p%%)\ \ COL:%c%V\ \ F:%{foldlevel('.')}
 
 "Настройка omnicomletion для Python (а так же для js, html и css)
 autocmd FileType python set omnifunc=pythoncomplete#Complete
