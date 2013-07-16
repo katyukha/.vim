@@ -1,3 +1,6 @@
+execute pathogen#infect()
+
+
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
 
@@ -27,6 +30,8 @@ nmap K <C-b>
 
 
 nnoremap <silent> Q    :<C-U>bdelete<CR>
+noremap <C-p> :set invpaste<CR>
+
 "Git related keys
 nmap gs :Gstatus<CR>
 nmap gd :Gdiff<CR>
@@ -35,7 +40,6 @@ nmap gc :Gcommit<CR>
 
 colorscheme delek
 
-execute pathogen#infect()
 
 "Set only tabs and set tabwidth=4
 set expandtab
