@@ -1,3 +1,7 @@
+"Включаем распознавание типов файлов и типо-специфичные плагины:
+filetype on
+filetype plugin on
+
 execute pathogen#infect()
 
 
@@ -22,6 +26,8 @@ map <F7> <Esc> :set invnumber<CR>
 imap <F8> <Esc> :set invhlsearch<CR>i
 map <F8> <Esc> :set invhlsearch<CR>
 
+nmap <F9> :TagbarToggle<CR>
+
 nmap <F11> :NERDTreeToggle<CR>
 imap <F11> <ESC>:NERDTreeToggle<CR>
 
@@ -30,7 +36,9 @@ nmap K <C-b>
 
 
 nnoremap <silent> Q    :<C-U>bdelete<CR>
+
 noremap <C-p> :set invpaste<CR>
+inoremap <C-p> <Esc>:set invpaste<CR>i
 
 "Git related keys
 nmap gs :Gstatus<CR>
@@ -54,11 +62,30 @@ set laststatus=2    "Always how status line
 set nohlsearch        " highlight searches
 set statusline=%<%f\ %m%r%y\ \|\ %{fugitive#statusline()}%=LINE:%l/%L\ (%p%%)\ \ COL:%c%V\ \ F:%{foldlevel('.')}
 
+let NERDTreeIgnore=['\.pyc$']
+
 "Настройка omnicomletion для Python (а так же для js, html и css)
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+
+"Авто комплит по табу
+function InsertTabWrapper()
+let col = col('.') - 1
+if !col || getline('.')[col - 1] !~ '\k'
+return "\"
+else
+return "\<c-p>"
+endif
+endfunction
+imap <c-r>=InsertTabWrapper() "Показываем все полезные опции автокомплита сразу
+set complete=""
+set complete+=.
+set complete+=k
+set complete+=b
+set complete+=t
 
 
 "Highlight trailing whitespaces at the end of line
@@ -76,6 +103,6 @@ let python_highlight_all = 1
 "set t_Co=256
 
 "Колоночка, чтобы показывать плюсики для скрытия блоков кода:
-"set foldcolumn=1
-
+set foldcolumn=1
+"set foldmethod=syntax
 
