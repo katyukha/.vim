@@ -103,6 +103,6 @@ let python_highlight_all = 1
 "set t_Co=256
 
 "Колоночка, чтобы показывать плюсики для скрытия блоков кода:
-set foldcolumn=1
+"set foldcolumn=1
 "set foldmethod=syntax
 
