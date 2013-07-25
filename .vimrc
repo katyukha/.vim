@@ -1,8 +1,12 @@
 "Включаем распознавание типов файлов и типо-специфичные плагины:
+filetype off
+
+call pathogen#infect()
+call pathogen#helptags()
+
+"Включаем распознавание типов файлов и типо-специфичные плагины:
 filetype on
 filetype plugin on
-
-execute pathogen#infect()
 
 
 imap <F2> <Esc>:w<CR>
@@ -26,14 +30,18 @@ map <F7> <Esc> :set invnumber<CR>
 imap <F8> <Esc> :set invhlsearch<CR>i
 map <F8> <Esc> :set invhlsearch<CR>
 
-nmap <F9> :TagbarToggle<CR>
+imap <F9> <Esc> :PyLintWindowToggle<CR>i
+map <F9> <Esc> :PyLintWindowToggle<CR>
+
+map <leader>p8 :PyLintAuto<CR>
+
+nmap <F10> :TagbarToggle<CR>
 
 nmap <F11> :NERDTreeToggle<CR>
 imap <F11> <ESC>:NERDTreeToggle<CR>
 
 nmap J <C-f>
 nmap K <C-b>
-
 
 nnoremap <silent> Q    :<C-U>bdelete<CR>
 
@@ -102,7 +110,13 @@ let python_highlight_all = 1
 "Нужно во многих терминалах, например в gnome-terminal
 "set t_Co=256
 
-"Колоночка, чтобы показывать плюсики для скрытия блоков кода:
+"-------Python Mode----------
+" Disable python folding
+let g:pymode_folding = 0
+" Key for show python documentation
+let g:pymode_doc_key = '<F1>'
+let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe"
+"Колоночка,<C> чтобы показывать плюсики для скрытия блоков кода:
 "set foldcolumn=1
 "set foldmethod=syntax
 
