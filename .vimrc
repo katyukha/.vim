@@ -4,9 +4,21 @@ filetype off
 call pathogen#infect()
 call pathogen#helptags()
 
+"vunde init
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+
 "Включаем распознавание типов файлов и типо-специфичные плагины:
 filetype on
 filetype plugin on
+filetype plugin indent on " обязательно!
+
+"Vundle bundles
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'klen/python-mode'
+Bundle 'majutsushi/tagbar'
 
 
 imap <F2> <Esc>:w<CR>
