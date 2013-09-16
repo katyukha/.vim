@@ -116,6 +116,7 @@ let g:pymode_folding = 0
 " Key for show python documentation
 let g:pymode_doc_key = '<F1>'
 let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe"
+let g:pymode_lint_ignore = "E501,C0301"
 "Колоночка,<C> чтобы показывать плюсики для скрытия блоков кода:
 "set foldcolumn=1
 "set foldmethod=syntax
