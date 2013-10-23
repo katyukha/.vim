@@ -1,0 +1,12 @@
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/python-mode"]
+	path = bundle/python-mode
+	url = git://github.com/klen/python-mode.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
