@@ -15,10 +15,10 @@ filetype plugin on
 filetype plugin indent on " обязательно!
 
 "Vundle bundles
-
-Bundle 'tpope/vim-fugitive'
-Bundle 'klen/python-mode'
-Bundle 'majutsushi/tagbar'
+"  Installed as git submodules via pathogen
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'klen/python-mode'
+"Bundle 'majutsushi/tagbar'
 
 
 imap <F2> <Esc>:w<CR>
@@ -49,8 +49,8 @@ map <leader>p8 :PyLintAuto<CR>
 
 nmap <F10> :TagbarToggle<CR>
 
-nmap <F11> :NERDTreeToggle<CR>
-imap <F11> <ESC>:NERDTreeToggle<CR>
+nmap <F11> :NERDTreeTabsToggle<CR>
+imap <F11> <ESC>:NERDTreeTabsToggle<CR>
 
 nmap J <C-f>
 nmap K <C-b>
