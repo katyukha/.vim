@@ -27,8 +27,8 @@ map <F2> <Esc>:w<CR>
 imap <F3> <Esc>:sh<CR>
 map <F3> <Esc>:sh<CR>
 
-imap <F4> <Esc>:tabnew .<CR> 
-map <F4> <Esc>:tabnew .<CR>
+imap <F4> <Esc>:tabnew<CR>
+map <F4> <Esc>:tabnew<CR>
 
 imap <F5> <Esc> :tabprev <CR>
 map <F5> :tabprev <CR>
