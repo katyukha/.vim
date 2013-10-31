@@ -27,8 +27,8 @@ map <F2> <Esc>:w<CR>
 imap <F3> <Esc>:sh<CR>
 map <F3> <Esc>:sh<CR>
 
-imap <F4> <Esc>:tabnew<CR>
-map <F4> <Esc>:tabnew<CR>
+imap <F4> <Esc>:tabnew .<CR>
+map <F4> <Esc>:tabnew .<CR>
 
 imap <F5> <Esc> :tabprev <CR>
 map <F5> :tabprev <CR>
@@ -49,16 +49,16 @@ map <leader>p8 :PyLintAuto<CR>
 
 nmap <F10> :TagbarToggle<CR>
 
-nmap <F11> :NERDTreeTabsToggle<CR>
-imap <F11> <ESC>:NERDTreeTabsToggle<CR>
+nmap <F11> :NERDTreeToggle<CR>
+imap <F11> <ESC>:NERDTreeToggle<CR>
 
 nmap J <C-f>
 nmap K <C-b>
 
 nnoremap <silent> Q    :<C-U>bdelete<CR>
 
-noremap <C-p> :set invpaste<CR>
-inoremap <C-p> <Esc>:set invpaste<CR>i
+noremap <C-P> :set invpaste<CR>
+inoremap <C-P> <Esc>:set invpaste<CR>i
 
 "Git related keys
 nmap gs :Gstatus<CR>
