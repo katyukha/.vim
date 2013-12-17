@@ -37,3 +37,14 @@ Keyboard shortcuts
 ----------
 
 For generic Vim shortcuts see http://www.keyxl.com/aaa8263/290/VIM-keyboard-shortcuts.htm
+
+
+Used plugins
+------------
+
+1. [NERDTree](https://github.com/scrooloose/nerdtree)
+2. [NERD Commenter](https://github.com/scrooloose/nerdcommenter)
+3. [Python-mode](https://github.com/klen/python-mode)
+4. [TagBar](https://github.com/majutsushi/tagbar)
+5. [vim-fugittive](https://github.com/tpope/vim-fugitive)
+6. Others...
