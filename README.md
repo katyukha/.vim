@@ -6,7 +6,7 @@ To install simply clone to home dir and run:
 ```
 cd ~
 git clone https://github.com/katyukha/.vim.git .vim
-ln -s ./.vim/ .vimrc
+ln -sf .vim/.vimrc .vimrc
 cd .vim/
 git submodule init
 git submodule update
