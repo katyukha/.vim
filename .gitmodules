@@ -16,3 +16,6 @@
 [submodule "bundle/vim-simple-todo"]
 	path = bundle/vim-simple-todo
 	url = https://github.com/vitalk/vim-simple-todo
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
