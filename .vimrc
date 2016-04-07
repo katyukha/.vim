@@ -42,8 +42,8 @@ map <F7> <Esc> :set invnumber<CR>
 imap <F8> <Esc> :set invhlsearch<CR>i
 map <F8> <Esc> :set invhlsearch<CR>
 
-imap <F9> <Esc> :PyLintWindowToggle<CR>i
-map <F9> <Esc> :PyLintWindowToggle<CR>
+imap <F9> <Esc> :lclose<CR>i
+map <F9> <Esc> :lclose<CR>
 
 map <leader>p8 :PyLintAuto<CR>
 
@@ -123,12 +123,25 @@ let python_highlight_all = 1
 "set t_Co=256
 
 "-------Python Mode----------
+let g:pymode = 1
 " Disable python folding
 let g:pymode_folding = 0
 " Key for show python documentation
-let g:pymode_doc_key = '<F1>'
-let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe"
-let g:pymode_lint_ignore = "E501,C0301"
+let g:pymode_doc_bind = '<F1>'
+let g:pymode_lint = 1
+let g:pymode_lint_on_write = 1
+let g:pymode_lint_message = 1
+let g:pymode_lint_cwindow = 0
+let g:pymode_lint_signs = 1
+" let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe"
+" let g:pymode_lint_ignore = "E501,C0301"
+let g:pymode_quickfix_minheight = 3
+let g:pymode_quickfix_maxheight = 5
+
+let g:pymode_rope_lookup_project = 1
+
+let g:pymode_syntax_all = 1
+
 "Колоночка,<C> чтобы показывать плюсики для скрытия блоков кода:
 "set foldcolumn=1
 "set foldmethod=syntax
