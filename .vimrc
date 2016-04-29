@@ -16,10 +16,6 @@ filetype plugin indent on " обязательно!
 
 "Vundle bundles
 "  Installed as git submodules via pathogen
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'klen/python-mode'
-"Bundle 'majutsushi/tagbar'
-
 
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
@@ -95,20 +91,20 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 
 "Авто комплит по табу
-function InsertTabWrapper()
-let col = col('.') - 1
-if !col || getline('.')[col - 1] !~ '\k'
-return "\"
-else
-return "\<c-p>"
-endif
-endfunction
-imap <c-r>=InsertTabWrapper() "Показываем все полезные опции автокомплита сразу
-set complete=""
-set complete+=.
-set complete+=k
-set complete+=b
-set complete+=t
+"function InsertTabWrapper()
+"let col = col('.') - 1
+"if !col || getline('.')[col - 1] !~ '\k'
+"return "\"
+"else
+"return "\<c-p>"
+"endif
+"endfunction
+"imap <c-r>=InsertTabWrapper() "Показываем все полезные опции автокомплита сразу
+"set complete=""
+"set complete+=.
+"set complete+=k
+"set complete+=b
+"set complete+=t
 
 
 "Highlight trailing whitespaces at the end of line
@@ -141,7 +137,8 @@ let g:pymode_lint_signs = 1
 let g:pymode_quickfix_minheight = 3
 let g:pymode_quickfix_maxheight = 5
 
-let g:pymode_rope_lookup_project = 1
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope = 0
 
 let g:pymode_syntax_all = 1
 
