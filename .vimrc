@@ -68,6 +68,9 @@ nmap gc :Gcommit<CR>
 
 colorscheme delek
 
+"color column 80, this will colorize 80-th column to easily find too long
+"lines of code
+set colorcolumn=80
 
 "Set only tabs and set tabwidth=4
 set expandtab
