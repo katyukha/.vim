@@ -4,18 +4,10 @@ filetype off
 call pathogen#infect()
 call pathogen#helptags()
 
-"vunde init
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-
 "Включаем распознавание типов файлов и типо-специфичные плагины:
 filetype on
 filetype plugin on
-filetype plugin indent on " обязательно!
-
-"Vundle bundles
-"  Installed as git submodules via pathogen
+filetype plugin indent on
 
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
@@ -77,16 +69,16 @@ set smartindent
 
 set mouse=a "Включить поддержку мыши
 set backspace=indent,eol,start whichwrap+=<,>,[,]     "Удобное поведение backspace
-set laststatus=2    "Always how status line
+set laststatus=2    "Always show status line
 set nohlsearch        " highlight searches
 
 let NERDTreeIgnore=['\.pyc$']
 
 "Настройка omnicomletion для Python (а так же для js, html и css)
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 
 "Авто комплит по табу
@@ -154,6 +146,8 @@ if executable('odoo-helper')
         let g:pymode_lint_options_pylint = {'max-line-length': g:pymode_options_max_line_length}
     endif
 endif 
+
+let g:pymode_breakpoint_cmd = 'import pudb; pudb.set_trace()'
 
 "Колоночка,<C> чтобы показывать плюсики для скрытия блоков кода:
 "set foldcolumn=1
