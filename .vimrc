@@ -79,7 +79,6 @@ set mouse=a "Включить поддержку мыши
 set backspace=indent,eol,start whichwrap+=<,>,[,]     "Удобное поведение backspace
 set laststatus=2    "Always how status line
 set nohlsearch        " highlight searches
-set statusline=%<%f\ %m%r%y\ \|\ %{fugitive#statusline()}%=LINE:%l/%L\ (%p%%)\ \ COL:%c%V\ \ F:%{foldlevel('.')}
 
 let NERDTreeIgnore=['\.pyc$']
 
