@@ -118,7 +118,7 @@ let python_highlight_all = 1
 
 "Включаем 256 цветов в терминале, мы ведь работаем из иксов?
 "Нужно во многих терминалах, например в gnome-terminal
-"set t_Co=256
+set t_Co=256
 
 "-------Python Mode----------
 let g:pymode = 1
@@ -128,14 +128,16 @@ let g:pymode_folding = 0
 let g:pymode_doc_bind = '<F1>'
 let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
+let g:pymode_lint_on_fly = 0
 let g:pymode_lint_message = 1
-let g:pymode_lint_cwindow = 0
+let g:pymode_lint_cwindow = 1
 let g:pymode_lint_signs = 1
-" let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe"
+" let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe,pep257"
 " let g:pymode_lint_ignore = "E501,C0301"
 let g:pymode_quickfix_minheight = 3
 let g:pymode_quickfix_maxheight = 5
 
+let g:pymode_options_max_line_length = 79
 let g:pymode_rope_lookup_project = 0
 let g:pymode_rope = 0
 
