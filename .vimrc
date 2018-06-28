@@ -16,10 +16,6 @@ filetype plugin indent on " обязательно!
 
 "Vundle bundles
 "  Installed as git submodules via pathogen
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'klen/python-mode'
-"Bundle 'majutsushi/tagbar'
-
 
 imap <F2> <Esc>:w<CR>
 map <F2> <Esc>:w<CR>
@@ -42,8 +38,8 @@ map <F7> <Esc> :set invnumber<CR>
 imap <F8> <Esc> :set invhlsearch<CR>i
 map <F8> <Esc> :set invhlsearch<CR>
 
-imap <F9> <Esc> :PyLintWindowToggle<CR>i
-map <F9> <Esc> :PyLintWindowToggle<CR>
+imap <F9> <Esc> :lclose<CR>i
+map <F9> <Esc> :lclose<CR>
 
 map <leader>p8 :PyLintAuto<CR>
 
@@ -68,6 +64,9 @@ nmap gc :Gcommit<CR>
 
 colorscheme delek
 
+"color column 80, this will colorize 80-th column to easily find too long
+"lines of code
+set colorcolumn=80
 
 "Set only tabs and set tabwidth=4
 set expandtab
@@ -80,7 +79,6 @@ set mouse=a "Включить поддержку мыши
 set backspace=indent,eol,start whichwrap+=<,>,[,]     "Удобное поведение backspace
 set laststatus=2    "Always how status line
 set nohlsearch        " highlight searches
-set statusline=%<%f\ %m%r%y\ \|\ %{fugitive#statusline()}%=LINE:%l/%L\ (%p%%)\ \ COL:%c%V\ \ F:%{foldlevel('.')}
 
 let NERDTreeIgnore=['\.pyc$']
 
@@ -92,20 +90,20 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 
 "Авто комплит по табу
-function InsertTabWrapper()
-let col = col('.') - 1
-if !col || getline('.')[col - 1] !~ '\k'
-return "\"
-else
-return "\<c-p>"
-endif
-endfunction
-imap <c-r>=InsertTabWrapper() "Показываем все полезные опции автокомплита сразу
-set complete=""
-set complete+=.
-set complete+=k
-set complete+=b
-set complete+=t
+"function InsertTabWrapper()
+"let col = col('.') - 1
+"if !col || getline('.')[col - 1] !~ '\k'
+"return "\"
+"else
+"return "\<c-p>"
+"endif
+"endfunction
+"imap <c-r>=InsertTabWrapper() "Показываем все полезные опции автокомплита сразу
+"set complete=""
+"set complete+=.
+"set complete+=k
+"set complete+=b
+"set complete+=t
 
 
 "Highlight trailing whitespaces at the end of line
@@ -120,15 +118,31 @@ let python_highlight_all = 1
 
 "Включаем 256 цветов в терминале, мы ведь работаем из иксов?
 "Нужно во многих терминалах, например в gnome-terminal
-"set t_Co=256
+set t_Co=256
 
 "-------Python Mode----------
+let g:pymode = 1
 " Disable python folding
 let g:pymode_folding = 0
 " Key for show python documentation
-let g:pymode_doc_key = '<F1>'
-let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe"
-let g:pymode_lint_ignore = "E501,C0301"
+let g:pymode_doc_bind = '<F1>'
+let g:pymode_lint = 1
+let g:pymode_lint_on_write = 1
+let g:pymode_lint_on_fly = 0
+let g:pymode_lint_message = 1
+let g:pymode_lint_cwindow = 1
+let g:pymode_lint_signs = 1
+" let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe,pep257"
+" let g:pymode_lint_ignore = "E501,C0301"
+let g:pymode_quickfix_minheight = 3
+let g:pymode_quickfix_maxheight = 5
+
+let g:pymode_options_max_line_length = 79
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope = 0
+
+let g:pymode_syntax_all = 1
+
 "Колоночка,<C> чтобы показывать плюсики для скрытия блоков кода:
 "set foldcolumn=1
 "set foldmethod=syntax
