@@ -142,6 +142,18 @@ let g:pymode_rope_lookup_project = 0
 let g:pymode_rope = 0
 
 let g:pymode_syntax_all = 1
+let g:pymode_python = 'python3'
+
+" Add basic integration with odoo-helper-scripts
+if executable('odoo-helper')
+    call system('odoo-helper system is-project')
+    if v:shell_error == 0
+        let virtualenv_path = system('odoo-helper system get-venv-dir')
+        let virtualenv_path = substitute(virtualenv_path, '\n\+$', '', '')
+        let g:pymode_virtualenv_path = virtualenv_path
+        let g:pymode_lint_options_pylint = {'max-line-length': g:pymode_options_max_line_length}
+    endif
+endif 
 
 "Колоночка,<C> чтобы показывать плюсики для скрытия блоков кода:
 "set foldcolumn=1
