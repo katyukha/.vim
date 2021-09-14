@@ -31,9 +31,3 @@
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-[submodule "bundle/vim-cython"]
-	path = bundle/vim-cython
-	url = https://github.com/tshirtman/vim-cython
-[submodule "bundle/python-syntax"]
-	path = bundle/python-syntax
-	url = https://github.com/hdima/python-syntax
