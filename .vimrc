@@ -52,7 +52,6 @@ inoremap <C-P> <Esc>:set invpaste<CR>i
 nmap gs :Gstatus<CR>
 nmap gd :Gdiff<CR>
 nmap gc :Gcommit<CR>
-"noremap <silent> <F11> :cal VimCommanderToggle()<CR>
 
 colorscheme delek
 
